@@ -16,18 +16,21 @@ start_cron_schedule = "cron(00 07 ? * MON-FRI *)"  # Start Servers at 10:00 by K
 stop_cron_schedule  = "cron(00 17 ? * MON-FRI *)"  # Stop  Servers at 20:00 will stop by Kyiv time-zone every working day.
 ```
 ## How to use as a module by default
-
+```
 module "aws-ec2-schedule" {
   source = "../aws-ec2-module"
 }
-
+```
 OR
 
+```
 module "aws-ec2-schedule" {
   source              = "git::https://github.com/your-git-username/your-repository-name.git"
 }
+```
 
 ## How to use as a module  with your own variables
+```
  module "aws-ec2-schedule" {
   source              = "git::https://github.com/your-git-username/your-repository-name.git"
   start_cron_schedule = "cron(00 07 ? * MON-FRI *)"
@@ -36,3 +39,4 @@ module "aws-ec2-schedule" {
   name = "company_example_job"
   common_tags = {CompanyName : "SomeName", KeyTag : "KeyValue"}
 }
+```
